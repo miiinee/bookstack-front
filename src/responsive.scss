@@ -1,0 +1,76 @@
+@media (min-width: 736px){
+    .account_avatar {
+        height: 150px;
+        width: 150px;
+        border-radius: 50%;
+        flex-shrink: 0;
+        object-fit: cover;
+    }
+
+    .nav_wrap {
+        mat-icon {
+            margin-right: 30px;
+    
+        }
+        mat-icon:last-child {
+            margin-right: 0;
+        }
+
+    }
+
+}
+
+@media (max-width: 735px){
+    .nav_wrap{
+        font-size: 1.2rem !important;
+        width: 100%;
+
+        .mat-icon {
+            height: 24px !important;
+            width: 24px !important;
+
+        }
+        .material-icons {
+            font-size: 24px !important;
+        }
+
+        mat-icon {
+            margin-right: 15px;
+
+        }
+        mat-icon:last-child {
+            margin-right: 0;
+        }
+    }
+
+    .account_avatar {
+        height: 77px;
+        width: 77px;
+        border-radius: 50%;
+        flex-shrink: 0;
+        object-fit: cover;
+    }
+
+    .account_intro {
+        margin-bottom: 15px;
+        font-size: 0.875rem;
+    }
+
+    .account_cond {
+        ul {
+            display: flex;
+            padding: 0;
+            text-align: center;
+            font-size: 0.875rem;
+
+            li {
+                list-style-type: none;
+                width: 33%;
+            }
+            li + li {
+                margin-left: 2rem;
+            }
+
+        }
+    }
+}

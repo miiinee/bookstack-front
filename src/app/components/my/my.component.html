@@ -1,0 +1,48 @@
+<div id="app-my" class="inner">
+  <div class="my-inner">
+    <div class="my-profile">
+      <div class="profile_avatar">
+        <img class="account_avatar" src="https://material.angular.io/assets/img/examples/shiba1.jpg" alt="avatar image">
+      </div>
+      <div class="profile_desc">
+        <div>
+          <div class="account_name">계정이름/닉네임</div>
+          <div *ngIf="!isMobile" class="account_cond">
+            <ul>
+              <li>게시물 <span>00</span></li>
+              <li>팔로워 <span>00</span></li>
+              <li>팔로우 <span>00</span></li>
+            </ul>
+          </div>
+          <div *ngIf="!isMobile" class="account_intro">
+            설명설명
+          </div>
+        </div>
+      </div>
+      
+    </div> 
+    <div *ngIf="isMobile">
+      <div class="account_intro">
+        설명설명
+      </div>
+      <mat-divider></mat-divider>
+      <div class="account_cond">
+        <ul>
+          <li>게시물<br><span>00</span></li>
+          <li>팔로워<br><span>00</span></li>
+          <li>팔로우<br><span>00</span></li>
+        </ul>
+      </div>
+      <mat-divider></mat-divider>
+    </div>
+
+    <mat-divider *ngIf="!isMobile"></mat-divider>
+
+    <div class="my-feed">
+      <div class="feed-card">
+        <app-card [isMine]="isMine"></app-card>
+      </div>
+
+    </div>
+  </div>
+</div>

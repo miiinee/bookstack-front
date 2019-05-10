@@ -1,0 +1,53 @@
+.my-inner {
+    width: 100%;
+
+    .my-profile {
+        width: 100%;
+        margin: 15px 0;
+        display: flex;
+    
+        .profile_avatar {
+            width: 20%;
+            text-align: center;
+            margin-right: 30px;
+        }
+
+        .profile_desc {
+            display: flex;
+            align-items: center;
+            width: 80%;
+    
+            .account_name {
+                font-size: 1.5rem;
+                font-weight: 400;
+            }
+            
+            .account_cond {
+                ul {
+                    display: flex;
+                    padding: 0;
+                    li {
+                        list-style-type: none;
+                    }
+                    li + li {
+                        margin-left: 2rem;
+                    }
+    
+                }
+            }
+        }
+    }
+
+    .my-feed {
+        display: flex;
+        justify-content: center;
+        margin: 15px 0;
+
+        .feed-card {
+            display: flex;
+            width: 100%;
+            flex-wrap: wrap;
+        }
+        
+    }
+}

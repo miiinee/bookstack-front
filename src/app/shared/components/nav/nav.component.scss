@@ -1,0 +1,35 @@
+mat-toolbar{
+    margin-bottom: 15px;
+    
+    .nav_wrap{
+        display: flex;
+        margin: 0 auto;
+        align-items: center;
+        justify-content: space-between;
+
+        font-size: 2rem;
+        font-weight: bold;
+
+        .logo, .mat-icon {
+            cursor: pointer;
+        }
+        
+        .logo:focus, .mat-icon:focus {
+            outline: none;
+        }
+        
+        .tools {
+            display: flex;
+            align-items: center;
+            
+            .mat-icon {
+                height: 32px;
+                width: 32px;
+    
+            }
+            .material-icons {
+                font-size: 2rem;
+            }
+        }
+    }
+}

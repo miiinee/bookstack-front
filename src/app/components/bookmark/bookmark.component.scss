@@ -1,0 +1,10 @@
+.feed {
+    display: flex;
+    justify-content: center;
+    
+    .feed-card {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+}
