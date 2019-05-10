@@ -1,7 +1,39 @@
 <div id="app-create">
   <div class="inner">
-    <p>
-      it works;
-    </p>
+    <div class="create_wrap">
+      <div class="search">
+        <!-- <form class="example-form">
+          <mat-form-field class="example-full-width" (click)="openDialog()">
+            <span matPrefix>&nbsp;</span>
+            <input name="search_field" matInput placeholder="책제목" [(ngModel)]="searchKey">
+            <mat-icon matSuffix>search</mat-icon>
+          </mat-form-field>
+        </form> -->
+        <mat-form-field appearance="outline" (click)="openDialog()">
+          <mat-label>책 찾기</mat-label>
+          <input matInput name="search_field" placeholder="" [(ngModel)]="searchKey">
+          <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+          <!-- <button mat-button (click)="openDialog()">Open dialog</button> -->
+      </div>
+      <div class="book_dtl">
+        <img src="https://bookthumb-phinf.pstatic.net/cover/069/831/06983181.jpg?type=m1&udate=20120814" alt="book cover">
+        <div class="book_desc">
+          <div>
+            <div class="title">책 체목</div>
+            <div class="author">저자 | 출판사</div>
+          </div>
+        </div>
+      </div>
+      <div class="book_phrase">
+        <mat-form-field appearance="outline">
+            <mat-label>기억하고 싶은 구문</mat-label>
+          <textarea matInput placeholder="" rows="4"></textarea>
+        </mat-form-field>
+        <mat-form-field class="page">
+          <input matInput placeholder="p.페이지수">
+        </mat-form-field>
+      </div>
+    </div>
   </div>
 </div>

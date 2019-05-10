@@ -1,0 +1,49 @@
+.inner {
+    justify-content: center;
+}
+
+.create_wrap {
+    width: 100%;
+}
+
+.search {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+mat-form-field {
+    width: 580px !important;
+}
+
+.book_dtl {
+    display: flex;
+    margin-bottom: 30px;
+
+    img {
+        width: 10%;
+        height: 10%;
+        margin-right: 30px;
+    }
+
+    .book_desc {
+        display: flex;
+        align-items: center;
+    
+        .title {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 15px;
+        }
+    }
+
+}
+.book_phrase {
+    mat-form-field {
+        margin-right: 30px !important;
+    }
+    .page {
+        width: 100px !important;
+    }
+}
+
+

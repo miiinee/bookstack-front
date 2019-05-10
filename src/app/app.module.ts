@@ -1,7 +1,11 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatToolbarModule, MatMenuModule, MatIconModule, MatButtonModule, MatCardModule, MatDividerModule } from '@angular/material';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatToolbarModule, MatMenuModule, MatIconModule, 
+         MatButtonModule, MatCardModule, MatDividerModule, 
+         MatInputModule, MatFormFieldModule, MatDialogModule 
+      } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,10 +15,12 @@ import { CardComponent } from './components/card/card.component';
 import { MyComponent } from './components/my/my.component';
 import { CreateComponent } from './components/create/create.component';
 import { BookmarkComponent } from './components/bookmark/bookmark.component';
+import { DialogComponent } from './shared/components/dialog/dialog.component';
 
 @NgModule({
   imports: [
     BrowserModule,
+    FormsModule,
     BrowserAnimationsModule,
     MatToolbarModule,
     MatMenuModule,
@@ -22,6 +28,9 @@ import { BookmarkComponent } from './components/bookmark/bookmark.component';
     MatButtonModule,
     MatCardModule,
     MatDividerModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatDialogModule,
     AppRoutingModule
   ],
   declarations: [
@@ -31,7 +40,11 @@ import { BookmarkComponent } from './components/bookmark/bookmark.component';
     CardComponent,
     MyComponent,
     CreateComponent,
-    BookmarkComponent
+    BookmarkComponent,
+    DialogComponent
+  ],
+  entryComponents: [
+    DialogComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
