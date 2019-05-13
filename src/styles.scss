@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import '@angular/material/prebuilt-themes/indigo-pink.css';
 @import url('http://fonts.googleapis.com/earlyaccess/notosanskr.css');
+@import '~css-star-rating/scss/star-rating';
 
 body{
     font-family: 'Noto Sans KR', Roboto, "Helvetica Neue", sans-serif;
@@ -12,4 +13,19 @@ body{
     display: flex;
     width: 90%;
     margin: 0 auto;
+}
+
+
+star-rating {
+    
+    div {
+        justify-content: left !important;
+    }
+    div:focus {
+        outline: none;
+    }
+
+    .star-container {
+        margin: 0;
+    }
 }

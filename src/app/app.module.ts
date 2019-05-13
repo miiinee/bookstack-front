@@ -6,6 +6,7 @@ import { MatToolbarModule, MatMenuModule, MatIconModule,
          MatButtonModule, MatCardModule, MatDividerModule, 
          MatInputModule, MatFormFieldModule, MatDialogModule 
       } from '@angular/material';
+import { StarRatingModule } from 'angular-star-rating';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +17,7 @@ import { MyComponent } from './components/my/my.component';
 import { CreateComponent } from './components/create/create.component';
 import { BookmarkComponent } from './components/bookmark/bookmark.component';
 import { DialogComponent } from './shared/components/dialog/dialog.component';
+import { BookComponent } from './shared/components/book/book.component';
 
 @NgModule({
   imports: [
@@ -31,6 +33,7 @@ import { DialogComponent } from './shared/components/dialog/dialog.component';
     MatInputModule,
     MatFormFieldModule,
     MatDialogModule,
+    StarRatingModule.forRoot(),
     AppRoutingModule
   ],
   declarations: [
@@ -41,7 +44,8 @@ import { DialogComponent } from './shared/components/dialog/dialog.component';
     MyComponent,
     CreateComponent,
     BookmarkComponent,
-    DialogComponent
+    DialogComponent,
+    BookComponent
   ],
   entryComponents: [
     DialogComponent

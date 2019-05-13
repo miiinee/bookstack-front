@@ -1,0 +1,24 @@
+<div *ngIf="!isMobile;else mobile" class="book_desc">
+  <img mat-card-image src="https://bookthumb-phinf.pstatic.net/cover/069/831/06983181.jpg?type=m1&udate=20120814" alt="book cover">
+  <div class="book_desc_txt">
+    <div class="title">Dog Man #3 : A Tale of Two Kitties From the Creator of Captain Underpants [ Hardcover ]</div>
+    <div class="author">대브 필키 글그림/호세 가리발디 그림 | Graphix</div>
+    <star-rating *ngIf="!isWriting" staticColor="ok" size="medium" [rating]="2.5" [step]="0.5" [showHalfStars]="true" [readOnly]="true"></star-rating>
+    <star-rating *ngIf="isWriting" staticColor="ok" size="large"></star-rating>
+  </div>
+</div>
+
+<ng-template #mobile>
+  <div class="m_book_desc">
+    <div class="m_book_img">
+      <img mat-card-image src="https://bookthumb-phinf.pstatic.net/cover/069/831/06983181.jpg?type=m1&udate=20120814" alt="book cover">
+    </div>
+    <div class="m_book_desc_txt">
+      <div class="title">Dog Man #3 : A Tale of Two Kitties From the Creator of Captain Underpants [ Hardcover ]</div>
+      <div class="author">대브 필키 글그림/호세 가리발디 그림 | Graphix</div>
+      <star-rating *ngIf="!isWriting" staticColor="ok" size="medium" [rating]="2.5" [step]="0.5" [showHalfStars]="true" [readOnly]="true"></star-rating>
+      <star-rating *ngIf="isWriting" staticColor="ok" size="large"></star-rating>
+    </div>
+  </div>
+
+</ng-template>

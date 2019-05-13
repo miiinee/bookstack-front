@@ -1,0 +1,58 @@
+.book_desc {
+    display: flex;
+    align-items: center;
+
+    .mat-card-image {
+        /* width: calc(100% + 32px); */
+        width: unset;
+        margin: 0 16px 0 0;
+    }
+    
+    .mat-card-image:first-child {
+        margin-top: 0px;
+    }
+
+    .title {
+        font-size: 1.2rem;
+        font-weight: 400;
+        margin-bottom: 5px;
+        padding-left: 5px;
+    }
+
+    .author {
+        margin-bottom: 5px;
+        padding-left: 5px;
+    }
+}
+
+.m_book_desc {
+
+    .m_book_img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        .mat-card-image {
+            width: calc(50% + 32px);
+    
+        }
+        .mat-card-image:first-child {
+            margin-top: 0px;
+            margin-bottom: 15px;
+        }
+    }
+
+    .m_book_desc_txt {
+        .title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        .author {
+            font-size: 0.875rem;
+            margin-bottom: 5px;
+        }
+        
+    }
+}
+

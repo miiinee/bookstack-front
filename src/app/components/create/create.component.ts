@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone, ViewChild } from '@angular/core';
 import {MatDialog} from '@angular/material';
+import {CdkTextareaAutosize} from '@angular/cdk/text-field';
+import {take} from 'rxjs/operators';
+
 import { DialogComponent } from '../../shared/components/dialog/dialog.component';
 
 @Component({
@@ -9,10 +12,15 @@ import { DialogComponent } from '../../shared/components/dialog/dialog.component
 })
 export class CreateComponent implements OnInit {
 
+  @ViewChild('autosize') autosize: CdkTextareaAutosize;
+
   searchKey: string;
 
+  isWriting: boolean = true;
+
   constructor(
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private ngZone: NgZone
   ) { }
 
   ngOnInit() {
@@ -26,4 +34,11 @@ export class CreateComponent implements OnInit {
       console.log(`Dialog result: ${result}`);
     });
   }
+
+  triggerResize() {
+    // Wait for changes to be applied, then trigger textarea resize.
+    this.ngZone.onStable.pipe(take(1))
+        .subscribe(() => this.autosize.resizeToFitContent(true));
+  }
+  
 }
