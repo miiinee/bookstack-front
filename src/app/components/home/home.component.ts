@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { BookstackService } from '../../services/bookstack.service';
+import { Book } from '../../models/book';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -7,11 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  books: Book[];
   isMine: boolean = false;
 
-  constructor() { }
+  constructor(
+    private bookstackService: BookstackService
+  ) { }
 
   ngOnInit() {
+    this.getBooks();
   }
 
+  getBooks(){
+    this.books = this.bookstackService.getBooks();
+  }
 }
