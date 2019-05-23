@@ -1,13 +1,7 @@
 <div id="app-home">
   <div class="inner feed">
     <div class="feed-card">
-      <app-card [isMine]="isMine"></app-card>
-      <app-card [isMine]="isMine"></app-card>
-      <app-card [isMine]="isMine"></app-card>
-      <app-card [isMine]="isMine"></app-card>
-      <app-card [isMine]="isMine"></app-card>
-      <app-card [isMine]="isMine"></app-card>
-
+      <app-card *ngFor="let book of books" [book]="book" [isMine]="isMine"></app-card>
     </div>
   </div>
 </div>

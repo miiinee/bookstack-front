@@ -4,7 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule, MatMenuModule, MatIconModule, 
          MatButtonModule, MatCardModule, MatDividerModule, 
-         MatInputModule, MatFormFieldModule, MatDialogModule 
+         MatInputModule, MatFormFieldModule, MatDialogModule,
+         MatBadgeModule
       } from '@angular/material';
 import { StarRatingModule } from 'angular-star-rating';
 
@@ -33,6 +34,7 @@ import { BookComponent } from './shared/components/book/book.component';
     MatInputModule,
     MatFormFieldModule,
     MatDialogModule,
+    MatBadgeModule,
     StarRatingModule.forRoot(),
     AppRoutingModule
   ],

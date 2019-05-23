@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, HostListener } from '@angular/core';
+import { Book } from '../../../models/book';
 
 @Component({
   selector: 'app-book',
@@ -7,6 +8,7 @@ import { Component, OnInit, Input, HostListener } from '@angular/core';
 })
 export class BookComponent implements OnInit {
 
+  @Input() book: Book;
   @Input() isWriting: boolean;
   
   innerWidth: number;
