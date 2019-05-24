@@ -21,7 +21,8 @@ export class CardComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    
+    this.isFavorite = this.book.isFavorite;
+    this.isBookmark = this.book.isBookmark;
   }
 
   toggleFavorite($event) {

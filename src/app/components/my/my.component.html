@@ -6,7 +6,7 @@
       </div>
       <div class="profile_desc">
         <div>
-          <div class="account_name">계정이름/닉네임</div>
+          <div class="account_name">{{user.username}}</div>
           <div *ngIf="!isMobile" class="account_cond">
             <ul>
               <li>게시물 <span>00</span></li>
@@ -15,7 +15,7 @@
             </ul>
           </div>
           <div *ngIf="!isMobile" class="account_intro">
-            설명설명
+            {{user?.intro}}
           </div>
         </div>
       </div>
@@ -23,7 +23,7 @@
     </div> 
     <div *ngIf="isMobile">
       <div class="account_intro">
-        설명설명
+        {{user.intro}}
       </div>
       <mat-divider></mat-divider>
       <div class="account_cond">
@@ -40,7 +40,7 @@
 
     <div class="my-feed">
       <div class="feed-card">
-        <app-card [isMine]="isMine"></app-card>
+        <app-card *ngFor="let book of books" [book]="book" [isMine]="isMine"></app-card>
       </div>
 
     </div>

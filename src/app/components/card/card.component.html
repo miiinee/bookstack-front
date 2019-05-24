@@ -3,34 +3,33 @@
   <mat-card-header *ngIf="!isMine">
       <!-- <div mat-card-avatar class="example-header-image"></div> -->
     <img mat-card-avatar src="https://material.angular.io/assets/img/examples/shiba1.jpg" alt="avatar image">
-    <mat-card-title>{{book.addUser}}</mat-card-title>
+    <mat-card-title>{{book.username}}</mat-card-title>
     <mat-card-subtitle>{{book.modDt?(book.modDt | date : 'yyyy.MM.dd') : (book.addDt | date : 'yyyy.MM.dd')}}</mat-card-subtitle>
   </mat-card-header>
 
   <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
   <!-- <img mat-card-image src="https://bookthumb-phinf.pstatic.net/cover/069/831/06983181.jpg?type=m1&udate=20120814" alt="image of book cover"> -->
-  <app-book [book]="book" [isWriting]="isWriting"></app-book>
+  <app-book [book]="book" [isWriting]="isWriting" [isSearching]="false"></app-book>
 
   <mat-card-content>
     <div class="review">
       <p>
-        <!-- <span matBadge="REVIEW" matBadgeOverlap="false" matBadgePosition="before" matBadgeSize="large" matBadgeColor="accent" class="review_badge">
-        </span> -->
-        {{book.review}}
+        <span class="review_badge">REVIEW</span>
+        {{book?.review}}
       </p>
     </div>
 
     <div *ngIf="book.phrase.length > 30;else content" class="phrase">
       <p *ngIf="!isExpand;else expand">
-        {{book.phrase.substring(0,30)}} ... <span class="more" (click)="isExpand = !isExpand">더보기</span>
+        {{book?.phrase.substring(0,30)}} ... <span class="more" (click)="isExpand = !isExpand">더보기</span>
       </p>
       <ng-template #expand>
-        {{book.phrase}}
+        {{book?.phrase}}
       </ng-template>
     </div>
     <ng-template #content>
       <p>
-        {{book.phrase}}
+        {{book?.phrase}}
       </p>
     </ng-template>
   </mat-card-content>

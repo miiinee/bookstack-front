@@ -7,7 +7,12 @@ export class Book {
     rating: string;
     review: string;
     phrase: string;
-    addUser: string;
+    addUserUid: string;
     addDt: string;
     modDt: string;
+
+    /*==========non-member variable==========*/
+    username: string;
+    isFavorite: boolean;
+    isBookmark: boolean;
 }

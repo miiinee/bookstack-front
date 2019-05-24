@@ -16,9 +16,34 @@
 }
 
 .review {
-    min-height: 370px;
+    p {
+        min-height: 84px;
+
+    }
+    line-height: 1.5;
+    // .review_badge {
+    //     border: 2px solid #ff4081;
+    //     border-radius: 10px;
+    //     color: #fff;
+    //     background-color: #ff4081;
+    //     padding: .1em .6em;
+    //     font-weight: 600;
+    //     cursor: default;
+    // }
+    .review_badge {
+        border: 2px solid #ff4081;
+        border-radius: 7px;
+        color: #ff4081;
+        padding: .1em .6em;
+        font-weight: 600;
+        cursor: default;
+        margin-right: 10px;
+    }
 }
 
 .phrase {
-    min-height: 40px;
+    P{
+        min-height: 40px;
+
+    }
 }

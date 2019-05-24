@@ -21,8 +21,8 @@ export class HomeComponent implements OnInit {
     this.getBooks();
   }
 
-  getBooks(){
-    this.bookstackService.getBooks().subscribe(
+  getBooks(): void {
+    this.bookstackService.getAllBooks().subscribe(
       books => this.books = books
     );
   }

@@ -1,24 +1,29 @@
-<div *ngIf="!isMobile;else mobile" class="book_desc">
-  <img mat-card-image src="{{book.thumbnail}}" alt="book cover">
-  <div class="book_desc_txt">
-    <div class="title">{{book.title}}</div>
-    <div class="author">{{book.author}} | {{book.publisher}}</div>
-    <star-rating *ngIf="!isWriting" staticColor="ok" size="medium" [rating]="book.rating" [step]="0.5" [showHalfStars]="true" [readOnly]="true"></star-rating>
-    <star-rating *ngIf="isWriting" staticColor="ok" size="large"></star-rating>
-  </div>
+<div *ngIf="!book;else set_book" class="book_default">
+
 </div>
 
-<ng-template #mobile>
-  <div class="m_book_desc">
-    <div class="m_book_img">
-      <img mat-card-image src="{{book.thumbnail}}" alt="book cover">
-    </div>
-    <div class="m_book_desc_txt">
-      <div class="title">{{book.title}}</div>
-    <div class="author">{{book.author}} | {{book.publisher}}</div>
-      <star-rating *ngIf="!isWriting" staticColor="ok" size="medium" [rating]="book.rating" [step]="0.5" [showHalfStars]="true" [readOnly]="true"></star-rating>
-      <star-rating *ngIf="isWriting" staticColor="ok" size="large"></star-rating>
+<ng-template #set_book>
+  <div *ngIf="!isMobile;else mobile" class="book_desc">
+    <img mat-card-image src="{{book?.thumbnail}}" alt="book cover">
+    <div class="book_desc_txt">
+      <div class="title">{{book?.title}}</div>
+      <div class="author">{{book?.author}} | {{book?.publisher}}</div>
+      <star-rating *ngIf="!isWriting && !isSearching" staticColor="ok" size="medium" [rating]="book?.rating" [step]="0.5" [showHalfStars]="true" [readOnly]="true"></star-rating>
+      <star-rating *ngIf="isWriting && !isSeraching" staticColor="ok" size="large"></star-rating>
     </div>
   </div>
-
+  
+  <ng-template #mobile>
+    <div class="m_book_desc">
+      <div class="m_book_img">
+        <img mat-card-image src="{{book?.thumbnail}}" alt="book cover">
+      </div>
+      <div class="m_book_desc_txt">
+        <div class="title">{{book?.title}}</div>
+      <div class="author">{{book?.author}} | {{book?.publisher}}</div>
+        <star-rating *ngIf="!isWriting" staticColor="ok" size="medium" [rating]="book?.rating" [step]="0.5" [showHalfStars]="true" [readOnly]="true"></star-rating>
+        <star-rating *ngIf="isWriting" staticColor="ok" size="large"></star-rating>
+      </div>
+    </div>
+  </ng-template>
 </ng-template>

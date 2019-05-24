@@ -29,3 +29,12 @@ star-rating {
         margin: 0;
     }
 }
+
+// set dialog min-width
+.cdk-overlay-pane {
+    min-width: 45vw;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline-thick {
+    color: #ff4081;
+}

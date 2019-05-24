@@ -6,20 +6,20 @@
         <!-- <form class="example-form">
           <mat-form-field class="example-full-width" (click)="openDialog()">
             <span matPrefix>&nbsp;</span>
-            <input name="search_field" matInput placeholder="책제목" [(ngModel)]="searchKey">
+            <input name="search_field" matInput placeholder="책제목" [(ngModel)]="searchText">
             <mat-icon matSuffix>search</mat-icon>
           </mat-form-field>
         </form> -->
         <mat-form-field appearance="outline" color="accent" (click)="openDialog()">
           <mat-label>책 찾기</mat-label>
-          <input matInput name="search_field" placeholder="" [(ngModel)]="searchKey">
+          <input matInput name="search_field" placeholder="" [(ngModel)]="searchText">
           <mat-icon matSuffix>search</mat-icon>
         </mat-form-field>
           <!-- <button mat-button (click)="openDialog()">Open dialog</button> -->
       </div>
 
       <div class="book_dtl">
-        <app-book [isWriting]="isWriting"></app-book>
+        <app-book [isWriting]="isWriting" [isSearching]="false"></app-book>
         <div class="book_phrase">
           <div class="input_group">
             <mat-form-field color="accent" hintLabel="공백 포함 최대 100자" class="evaluation">

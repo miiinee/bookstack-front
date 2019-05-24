@@ -14,7 +14,7 @@ export class CreateComponent implements OnInit {
 
   @ViewChild('autosize') autosize: CdkTextareaAutosize;
 
-  searchKey: string;
+  searchText: string;
 
   isWriting: boolean = true;
 
@@ -30,7 +30,7 @@ export class CreateComponent implements OnInit {
     const dialogRef = this.dialog.open(DialogComponent);
 
     dialogRef.afterClosed().subscribe(result => {
-      this.searchKey = result;
+      this.searchText = result;
       console.log(`Dialog result: ${result}`);
     });
   }

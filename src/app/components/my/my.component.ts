@@ -1,5 +1,11 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 
+import { BookstackService } from '../../services/bookstack.service';
+import { UserService } from '../../services/user.service';
+
+import { Book } from '../../models/book';
+import { User } from '../../models/user';
+
 @Component({
   selector: 'app-my',
   templateUrl: './my.component.html',
@@ -7,16 +13,23 @@ import { Component, OnInit, HostListener } from '@angular/core';
 })
 export class MyComponent implements OnInit {
   
+  user: User;
+
+  books: Book[];
   innerWidth: number;
 
   isMine: boolean = true;
   isMobile: boolean = false;
 
-  constructor() { }
+  constructor(
+    private bookstackService: BookstackService,
+    private userService: UserService
+  ) { }
 
   ngOnInit() {
     this.onResize();
-
+    this.getBooks();
+    this.getUser();
   }
   
   @HostListener('window:resize', ['$event'])
@@ -28,5 +41,17 @@ export class MyComponent implements OnInit {
       this.isMobile = true;
     }
     console.log(this.innerWidth + '//' + this.isMobile);
+  }
+
+  getBooks(): void {
+    this.bookstackService.getMyBooks('u0001').subscribe(
+      books => this.books = books
+    );
+  }
+
+  getUser(): void {
+    this.userService.getUser('u0001').subscribe(
+      user => this.user = user
+    );
   }
 }

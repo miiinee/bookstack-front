@@ -10,6 +10,7 @@ export class BookComponent implements OnInit {
 
   @Input() book: Book;
   @Input() isWriting: boolean;
+  @Input() isSearching: boolean;
   
   innerWidth: number;
   

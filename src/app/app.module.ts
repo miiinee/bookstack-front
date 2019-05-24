@@ -5,7 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule, MatMenuModule, MatIconModule, 
          MatButtonModule, MatCardModule, MatDividerModule, 
          MatInputModule, MatFormFieldModule, MatDialogModule,
-         MatBadgeModule
+         MatProgressBarModule
       } from '@angular/material';
 import { StarRatingModule } from 'angular-star-rating';
 
@@ -34,7 +34,7 @@ import { BookComponent } from './shared/components/book/book.component';
     MatInputModule,
     MatFormFieldModule,
     MatDialogModule,
-    MatBadgeModule,
+    MatProgressBarModule,
     StarRatingModule.forRoot(),
     AppRoutingModule
   ],

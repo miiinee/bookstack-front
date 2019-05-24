@@ -1,14 +1,14 @@
 .book_desc {
     display: flex;
     align-items: center;
-    min-height: 125px;
+    min-height: 150px;
     
     .mat-card-image {
         /* width: calc(100% + 32px); */
         width: 82px;
         margin: 0 16px 0 0;
     }
-    
+
     .mat-card-image:first-child {
         margin-top: 0px;
     }
