@@ -12,6 +12,7 @@ import { Book } from '../../../models/book';
 export class DialogComponent implements OnInit {
 
   books: Book[];
+  book: Book;
 
   isDefault: boolean = true;
   isSearching: boolean = false;
@@ -24,9 +25,22 @@ export class DialogComponent implements OnInit {
 
   }
 
-  searchBooks() {
+  searchBooks(searchText:string, $event) {
     this.bookstackService.getAllBooks().subscribe(
       books => {this.books = books;this.isDefault=false}
     );
+
+    // this.bookstackService.searchBooks(searchText).subscribe(
+    //   books => {}
+    // );
+  }
+
+  selectBook(book: Book, $event) {
+    this.books.forEach(
+      book => book.isSelected = false
+    );
+    
+    book.isSelected = !book.isSelected;
+    this.book = book;
   }
 }

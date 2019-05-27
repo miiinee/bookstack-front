@@ -4,6 +4,7 @@ import {CdkTextareaAutosize} from '@angular/cdk/text-field';
 import {take} from 'rxjs/operators';
 
 import { DialogComponent } from '../../shared/components/dialog/dialog.component';
+import { Book } from '../../models/book';
 
 @Component({
   selector: 'app-create',
@@ -14,6 +15,7 @@ export class CreateComponent implements OnInit {
 
   @ViewChild('autosize') autosize: CdkTextareaAutosize;
 
+  book: Book;
   searchText: string;
 
   isWriting: boolean = true;
@@ -29,9 +31,12 @@ export class CreateComponent implements OnInit {
   openDialog() {
     const dialogRef = this.dialog.open(DialogComponent);
 
-    dialogRef.afterClosed().subscribe(result => {
-      this.searchText = result;
-      console.log(`Dialog result: ${result}`);
+    dialogRef.afterClosed().subscribe(book => {
+      if(book) {
+        this.book = book;
+        this.searchText = book.title;
+        console.log(`Dialog result: ${JSON.stringify(book)}`);
+      }
     });
   }
 

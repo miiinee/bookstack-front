@@ -59,4 +59,8 @@ export class BookstackService {
     
     return of(books);
   }
+
+  searchBooks(searchText: string): Observable<Book[]> {
+    return;
+  }
 }

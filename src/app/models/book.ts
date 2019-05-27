@@ -15,4 +15,5 @@ export class Book {
     username: string;
     isFavorite: boolean;
     isBookmark: boolean;
+    isSelected: boolean;
 }

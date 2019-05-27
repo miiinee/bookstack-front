@@ -17,7 +17,8 @@ export const BOOKS: Book[] = [
         "modDt" : "",
         "username" : "",
         "isFavorite" : false,
-        "isBookmark" : false
+        "isBookmark" : false,
+        "isSelected" : false
     },
     {
         "uid" : "b0002",
@@ -33,7 +34,8 @@ export const BOOKS: Book[] = [
         "modDt" : "",
         "username" : "",
         "isFavorite" : false,
-        "isBookmark" : false
+        "isBookmark" : false,
+        "isSelected" : false
     },
     {
         "uid" : "b0003",
@@ -49,7 +51,8 @@ export const BOOKS: Book[] = [
         "modDt" : "2019-05-23 10:07:57",
         "username" : "",
         "isFavorite" : false,
-        "isBookmark" : false
+        "isBookmark" : false,
+        "isSelected" : false
     },
     {
         "uid" : "b0004",
@@ -65,7 +68,8 @@ export const BOOKS: Book[] = [
         "modDt" : "",
         "username" : "",
         "isFavorite" : false,
-        "isBookmark" : false
+        "isBookmark" : false,
+        "isSelected" : false
     },
     {
         "uid" : "b0005",
@@ -81,7 +85,8 @@ export const BOOKS: Book[] = [
         "modDt" : "",
         "username" : "",
         "isFavorite" : false,
-        "isBookmark" : false
+        "isBookmark" : false,
+        "isSelected" : false
     },
     {
         "uid" : "b0006",
@@ -97,7 +102,8 @@ export const BOOKS: Book[] = [
         "modDt" : "2019-05-23 10:07:57",
         "username" : "",
         "isFavorite" : false,
-        "isBookmark" : false
+        "isBookmark" : false,
+        "isSelected" : false
     }
 
 ];
