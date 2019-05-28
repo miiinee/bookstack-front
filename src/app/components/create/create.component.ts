@@ -43,7 +43,7 @@ export class CreateComponent implements OnInit {
   triggerResize() {
     // Wait for changes to be applied, then trigger textarea resize.
     this.ngZone.onStable.pipe(take(1))
-        .subscribe(() => this.autosize.resizeToFitContent(true));
+        .subscribe(() => this.autosize.resizeToFitContent(true)); 
   }
   
 }
