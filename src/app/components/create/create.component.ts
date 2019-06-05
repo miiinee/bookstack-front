@@ -5,7 +5,6 @@ import {take} from 'rxjs/operators';
 
 import { DialogComponent } from '../../shared/components/dialog/dialog.component';
 import { Book } from '../../models/book';
-import { BookComponent } from 'src/app/shared/components/book/book.component';
 
 @Component({
   selector: 'app-create',
@@ -15,7 +14,8 @@ import { BookComponent } from 'src/app/shared/components/book/book.component';
 export class CreateComponent implements OnInit {
 
   @ViewChild('autosize') autosize: CdkTextareaAutosize;
-  @ViewChild('searchField') searchField: ElementRef;
+  @ViewChild('review') review: ElementRef;
+  @ViewChild('phrase') phrase: ElementRef;
 
   book: Book;
   searchText: string;
@@ -51,8 +51,18 @@ export class CreateComponent implements OnInit {
   onCreateBook(selectedBook: Book, review: string, phrase: string){
 
     if(!selectedBook) {
-      alert('책을 선택해 주세요.');
-      this.searchField.nativeElement.focus();
+      alert('상단의 [책 찾기 검색창]을 통해 읽은 책을 선택해 주세요.');
+      return;
+    }
+    
+    if(!review) {
+      alert('한줄평을 작성해 주세요.');
+      return;
+    }
+    
+    if(!phrase) {
+      alert('상단의 [책 찾기 검색창]을 통해 읽은 책을 선택해 주세요.');
+      return;
     }
 
     const book: Book = {
