@@ -15,8 +15,8 @@ export class UserService {
   constructor() { }
 
   getUser(uid: string): Observable<User> {
-    const user = _.find(USERS, {'uid' : uid});
-    
+    const user = _.find(USERS, {uid});
+
     return of(user);
   }
 

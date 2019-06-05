@@ -11,10 +11,10 @@ export class BookComponent implements OnInit {
   @Input() book: Book;
   @Input() isWriting: boolean;
   @Input() isSearching: boolean;
-  
+
   innerWidth: number;
-  
-  isMobile: boolean = false;
+
+  isMobile = false;
 
   constructor() { }
 
@@ -25,11 +25,15 @@ export class BookComponent implements OnInit {
   @HostListener('window:resize', ['$event'])
   onResize(event?: any) {
     this.innerWidth = window.innerWidth;
-    if(this.innerWidth > 735) {
+    if (this.innerWidth > 735) {
       this.isMobile = false;
-    }else{
+    } else {
       this.isMobile = true;
     }
     console.log(this.innerWidth + '//' + this.isMobile);
+  }
+
+  onRating($event) {
+    this.book.rating = $event.rating;
   }
 }

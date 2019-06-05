@@ -1,10 +1,10 @@
-export class Book {
+export interface Book {
     uid: string;
     title: string;
     author: string;
     publisher: string;
     thumbnail: string;
-    rating: string;
+    rating: number;
     review: string;
     phrase: string;
     addUserUid: string;

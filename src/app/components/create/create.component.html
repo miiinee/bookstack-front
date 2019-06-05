@@ -6,13 +6,13 @@
         <!-- <form class="example-form">
           <mat-form-field class="example-full-width" (click)="openDialog()">
             <span matPrefix>&nbsp;</span>
-            <input name="search_field" matInput placeholder="책제목" [(ngModel)]="searchText">
+            <input #searchField matInput placeholder="책제목" [(ngModel)]="searchText">
             <mat-icon matSuffix>search</mat-icon>
           </mat-form-field>
         </form> -->
         <mat-form-field appearance="outline" color="accent" (click)="openDialog()">
           <mat-label>책 찾기</mat-label>
-          <input matInput name="search_field" placeholder="" [(ngModel)]="searchText">
+          <input matInput #searchField placeholder="" [(ngModel)]="searchText">
           <mat-icon matSuffix>search</mat-icon>
         </mat-form-field>
           <!-- <button mat-button (click)="openDialog()">Open dialog</button> -->
@@ -23,12 +23,12 @@
         <div class="book_phrase">
           <div class="input_group">
             <mat-form-field color="accent" hintLabel="공백 포함 최대 100자" class="evaluation">
-              <input matInput #input maxlength="100" placeholder="한줄평">
-              <mat-hint align="end">{{input.value?.length || 0}}/100</mat-hint>
+              <input matInput #review maxlength="100" placeholder="한줄평">
+              <mat-hint align="end">{{review.value?.length || 0}}/100</mat-hint>
             </mat-form-field>
             <mat-form-field appearance="outline" color="accent">
               <mat-label>기억하고 싶은 구문</mat-label>
-              <textarea matInput placeholder="" cdkTextareaAutosize
+              <textarea matInput #phrase placeholder="" cdkTextareaAutosize
                         #autosize="cdkTextareaAutosize"
                         cdkAutosizeMinRows="2"
                         cdkAutosizeMaxRows="5"></textarea>
@@ -42,7 +42,7 @@
 
       <div class="btn_group">
         <button mat-stroked-button routerLink="">취소</button>
-        <button mat-stroked-button color="accent">작성완료</button>
+        <button mat-stroked-button color="accent" (click)="onCreateBook(book, review.value, phrase.value)">작성완료</button>
       </div>
 
     </div>

@@ -1,7 +1,7 @@
 <!-- <h2 mat-dialog-title>Install Angular</h2> -->
 <mat-form-field appearance="outline" color="accent">
   <mat-label>책 찾기</mat-label>
-  <input matInput name="search_field" placeholder="" [(ngModel)]="searchText" (keyup.enter)="searchBooks(searchText, $event)">
+  <input matInput #searchField placeholder="" [(ngModel)]="searchText" (keyup.enter)="searchBooks(searchText, $event)">
   <!-- <mat-icon matSuffix (click)="searchBooks()">search</mat-icon> -->
   <button mat-flat-button color="accent" class="btn_search"(click)="searchBooks(searchText, $event)">검색</button>
 </mat-form-field>
@@ -22,7 +22,7 @@
     </ng-template>
   </div>
   <div *ngIf="!isDefault && isSearching">
-    <mat-progress-bar mode="indeterminate" [color]="accent"></mat-progress-bar>
+    <mat-progress-bar mode="indeterminate" color="accent"></mat-progress-bar>
   </div>
 
 </mat-dialog-content>

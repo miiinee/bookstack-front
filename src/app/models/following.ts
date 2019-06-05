@@ -1,6 +1,6 @@
 //C.R.D only
 // + history
-export class Following {
+export interface Following {
     uid: string;
     userUid: string; // user가
     fUserUid: string; // fUser를 following

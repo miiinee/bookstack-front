@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule, MatMenuModule, MatIconModule, 
          MatButtonModule, MatCardModule, MatDividerModule, 
@@ -24,6 +25,7 @@ import { BookComponent } from './shared/components/book/book.component';
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     MatToolbarModule,
     MatMenuModule,
