@@ -11,17 +11,17 @@ import { Book } from '../../models/book';
 export class HomeComponent implements OnInit {
 
   books: Book[];
-  isMine: boolean = false;
+  isMine: false;
 
   constructor(
     private bookstackService: BookstackService
   ) { }
 
   ngOnInit() {
-    this.getBooks();
+    this.getAllBooks();
   }
 
-  getBooks(): void {
+  getAllBooks(): void {
     this.bookstackService.getAllBooks().subscribe(
       books => this.books = books
     );

@@ -2,9 +2,11 @@ import { Book } from '../../models/book';
 import { Bookmark } from '../../models/bookmark';
 import { User } from '../../models/user';
 
+import * as uuid from 'uuid';
+
 export const BOOKS: Book[] = [
     {
-        uid : 'b0001',
+        uid : uuid.v4(),
         title : '개인주의자 선언 (판사 문유석의 일상유감)',
         author : '문유석',
         publisher : '문학동네',
@@ -21,7 +23,7 @@ export const BOOKS: Book[] = [
         isSelected : false
     },
     {
-        uid : 'b0002',
+        uid : uuid.v4(),
         title : '판사유감 (현직 부장판사가 말하는 법과 사람 그리고 정의)',
         author : '문유석',
         publisher : '21세기북스',
@@ -38,7 +40,7 @@ export const BOOKS: Book[] = [
         isSelected : false
     },
     {
-        uid : 'b0003',
+        uid : uuid.v4(),
         title : '백설공주에게 죽음을',
         author : '넬레 노이하우스',
         publisher : '북로드',
@@ -55,7 +57,7 @@ export const BOOKS: Book[] = [
         isSelected : false
     },
     {
-        uid : 'b0004',
+        uid : uuid.v4(),
         title : '너무 친한 친구들',
         author : '넬레 노이하우스',
         publisher : '북로드',
@@ -72,7 +74,7 @@ export const BOOKS: Book[] = [
         isSelected : false
     },
     {
-        uid : 'b0005',
+        uid : uuid.v4(),
         title : '깊은 상처',
         author : '넬레 노이하우스',
         publisher : '북로드',
@@ -89,7 +91,7 @@ export const BOOKS: Book[] = [
         isSelected : false
     },
     {
-        uid : 'b0006',
+        uid : uuid.v4(),
         title : 'Dog Man #6 : Brawl of the Wild (From the Creator of Captain Underpants)',
         author : 'Dav Pilkey',
         publisher : 'Graphix',
@@ -177,37 +179,37 @@ addDt: string; */
 export const BOOKMARKS: Bookmark[] = [
     {
         uid : 'm0001',
-        bookUid : 'b0002',
+        bookUid : BOOKS[1].uid,
         userUid : 'u0001',
         addDt : '2019-05-24 10:07:57'
     },
     {
         uid : 'm0002',
-        bookUid : 'b0003',
+        bookUid : BOOKS[2].uid,
         userUid : 'u0001',
         addDt : '2019-05-24 10:07:57'
     },
     {
         uid : 'm0003',
-        bookUid : 'b0005',
+        bookUid : BOOKS[4].uid,
         userUid : 'u0001',
         addDt : '2019-05-24 10:07:57'
     },
     {
         uid : 'm0004',
-        bookUid : 'b0002',
+        bookUid : BOOKS[1].uid,
         userUid : 'u0004',
         addDt : '2019-05-24 10:07:57'
     },
     {
         uid : 'm0005',
-        bookUid : 'b0003',
+        bookUid : BOOKS[2].uid,
         userUid : 'u0003',
         addDt : '2019-05-24 10:07:57'
     },
     {
         uid : 'm0006',
-        bookUid : 'b0005',
+        bookUid : BOOKS[5].uid,
         userUid : 'u0002',
         addDt : '2019-05-24 10:07:57'
     }

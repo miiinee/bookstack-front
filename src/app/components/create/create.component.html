@@ -46,5 +46,11 @@
       </div>
 
     </div>
+
+    <div *ngIf="isSpinner" class="spinner_wrap">
+      <div class="spinner">
+        <mat-progress-spinner color="accent" mode="indeterminate"></mat-progress-spinner>
+      </div>
+    </div>
   </div>
 </div>

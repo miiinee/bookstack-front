@@ -1,8 +1,10 @@
 import { Component, OnInit, NgZone, ViewChild, ElementRef } from '@angular/core';
-import {MatDialog} from '@angular/material';
-import {CdkTextareaAutosize} from '@angular/cdk/text-field';
-import {take} from 'rxjs/operators';
+import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material';
+import { CdkTextareaAutosize } from '@angular/cdk/text-field';
+import { take } from 'rxjs/operators';
 
+import { BookstackService } from '../../services/bookstack.service';
 import { DialogComponent } from '../../shared/components/dialog/dialog.component';
 import { Book } from '../../models/book';
 
@@ -21,10 +23,13 @@ export class CreateComponent implements OnInit {
   searchText: string;
 
   isWriting = true;
+  isSpinner = false;
 
   constructor(
     public dialog: MatDialog,
-    private ngZone: NgZone
+    private ngZone: NgZone,
+    private router: Router,
+    private bookstackService: BookstackService
   ) { }
 
   ngOnInit() {
@@ -34,7 +39,7 @@ export class CreateComponent implements OnInit {
     const dialogRef = this.dialog.open(DialogComponent);
 
     dialogRef.afterClosed().subscribe(book => {
-      if(book) {
+      if (book) {
         this.book = book;
         this.searchText = book.title;
         // console.log(`Dialog result: ${JSON.stringify(book)}`);
@@ -48,24 +53,24 @@ export class CreateComponent implements OnInit {
         .subscribe(() => this.autosize.resizeToFitContent(true));
   }
 
-  onCreateBook(selectedBook: Book, review: string, phrase: string){
+  onCreateBook(selectedBook: Book, review: string, phrase: string) {
 
-    if(!selectedBook) {
+    if (!selectedBook) {
       alert('상단의 [책 찾기 검색창]을 통해 읽은 책을 선택해 주세요.');
       return;
     }
-    
-    if(!review) {
+
+    if (!review) {
       alert('한줄평을 작성해 주세요.');
       return;
     }
-    
-    if(!phrase) {
+
+    if (!phrase) {
       alert('상단의 [책 찾기 검색창]을 통해 읽은 책을 선택해 주세요.');
       return;
     }
 
-    const book: Book = {
+    const newBook: Book = {
       uid : '',
       title : selectedBook.title,
       author : selectedBook.author,
@@ -81,6 +86,19 @@ export class CreateComponent implements OnInit {
       isFavorite : false,
       isBookmark : false,
       isSelected : false
-    }
+    };
+
+    this.isSpinner = true;
+
+    this.bookstackService.createBook(newBook).subscribe(
+      book => {
+        console.log(book);
+        this.router.navigate(['/']);
+        this.isSpinner = false;
+      },
+      error => {
+        console.error(error);
+      }
+    );
   }
 }
