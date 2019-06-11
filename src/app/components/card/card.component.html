@@ -43,6 +43,19 @@
       <mat-icon *ngIf="!isBookmark" aria-label="icon-button with a bookmark icon">bookmark_outline</mat-icon>
       <mat-icon *ngIf="isBookmark" aria-label="icon-button with a bookmark icon">bookmark</mat-icon>
     </button>
+    <button *ngIf="book.addUserUid === 'u0001'" class="mng_more" mat-icon-button color="accent" [matMenuTriggerFor]="menu" aria-label="managemnet icon-button with a menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu" xPosition="before">
+      <button mat-menu-item>
+        <mat-icon>update</mat-icon>
+        <span>게시물 수정</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>delete_outline</mat-icon>
+        <span>게시물 삭제</span>
+      </button>
+    </mat-menu>
   </mat-card-actions>
 
 </mat-card>
