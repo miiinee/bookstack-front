@@ -21,8 +21,8 @@
       <div class="m_book_desc_txt">
         <div class="title">{{book?.title}}</div>
         <div class="author">{{book?.author}} | {{book?.publisher}}</div>
-        <star-rating *ngIf="!isWriting  && !isSearching" staticColor="ok" size="medium" [rating]="book?.rating" [step]="0.5" [showHalfStars]="true" [readOnly]="true"></star-rating>
-        <star-rating *ngIf="isWriting  && !isSearching" staticColor="ok" size="large" (starClickChange)="onRating($event)"></star-rating>
+        <star-rating *ngIf="!isWriting && !isSearching" staticColor="ok" size="medium" [rating]="book?.rating" [step]="0.5" [showHalfStars]="true" [readOnly]="true"></star-rating>
+        <star-rating *ngIf="isWriting && !isSearching" staticColor="ok" size="large" (starClickChange)="onRating($event)"></star-rating>
       </div>
     </div>
   </ng-template>
