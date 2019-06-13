@@ -18,8 +18,9 @@ import { CardComponent } from './components/card/card.component';
 import { MyComponent } from './components/my/my.component';
 import { CreateComponent } from './components/create/create.component';
 import { BookmarkComponent } from './components/bookmark/bookmark.component';
-import { DialogComponent } from './shared/components/dialog/dialog.component';
+import { SearchComponent } from './components/search/search.component';
 import { BookComponent } from './shared/components/book/book.component';
+import { DialogComponent } from './shared/components/dialog/dialog.component';
 
 @NgModule({
   imports: [
@@ -49,10 +50,12 @@ import { BookComponent } from './shared/components/book/book.component';
     MyComponent,
     CreateComponent,
     BookmarkComponent,
-    DialogComponent,
-    BookComponent
+    SearchComponent,
+    BookComponent,
+    DialogComponent
   ],
   entryComponents: [
+    SearchComponent,
     DialogComponent
   ],
   providers: [],

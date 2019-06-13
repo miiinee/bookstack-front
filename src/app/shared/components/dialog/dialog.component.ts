@@ -1,8 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-
-import { BookstackService } from '../../../services/bookstack.service';
-
-import { Book } from '../../../models/book';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-dialog',
@@ -11,59 +7,9 @@ import { Book } from '../../../models/book';
 })
 export class DialogComponent implements OnInit {
 
-  @ViewChild('searchField') searchField: ElementRef;
-
-  books: Book[];
-  book: Book;
-
-  startNo = 1;
-
-  isDefault = true;
-  isSearching = false;
-
-  constructor(
-    private bookstackService: BookstackService
-  ) { }
+  constructor() { }
 
   ngOnInit() {
-
   }
 
-  searchBooks(searchText: string, $event) {
-    // this.bookstackService.getAllBooks().subscribe(
-    //   books => {this.books = books; this.isDefault = false;}
-    // );
-    if(!searchText) {
-      alert('검색어를 입력해주세요.');
-      this.searchField.nativeElement.focus();
-      return;
-    }
-
-    if(this.startNo > 1) {
-      this.startNo = this.startNo + 10;
-    }
-
-    this.isDefault = false;
-    this.isSearching = true;
-
-    this.bookstackService.searchBooks(searchText, this.startNo).subscribe(
-      books => {
-        this.books = books;
-
-        this.isSearching = false;
-      },
-      error => {
-        //TODO: toast
-      }
-    );
-  }
-
-  selectBook(book: Book, $event) {
-    this.books.forEach(
-      each => each.isSelected = false
-    );
-    
-    book.isSelected = !book.isSelected;
-    this.book = book;
-  }
 }

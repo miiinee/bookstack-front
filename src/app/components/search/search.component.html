@@ -1,0 +1,32 @@
+<!-- <h2 mat-dialog-title>Install Angular</h2> -->
+<mat-form-field appearance="outline" color="accent">
+  <mat-label>책 찾기</mat-label>
+  <input matInput #searchField placeholder="" [(ngModel)]="searchText" (keyup.enter)="searchBooks(searchText, $event)">
+  <!-- <mat-icon matSuffix (click)="searchBooks()">search</mat-icon> -->
+  <button mat-flat-button color="accent" class="btn_search"(click)="searchBooks(searchText, $event)">검색</button>
+</mat-form-field>
+<mat-dialog-content class="mat-typography">
+  <div *ngIf="isDefault" class="search_main">
+    책을 검색해보세요.
+  </div>
+  <div *ngIf="!isDefault && !isSearching">
+    <div *ngIf="books;else no_result">
+      <div *ngFor="let book of books" class="search_result {{book.isSelected? 'selected' : ''}}" (click)="selectBook(book, $event)">
+        <app-book class="" [book]="book" [isWriting]="false" [isSearching]="true"></app-book>
+      </div>
+    </div>
+    <ng-template #no_result>
+      <div>
+        검색 결과가 없습니다.
+      </div>
+    </ng-template>
+  </div>
+  <div *ngIf="!isDefault && isSearching">
+    <mat-progress-bar mode="indeterminate" color="accent"></mat-progress-bar>
+  </div>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button [mat-dialog-close]="">취소</button>
+  <button mat-button [mat-dialog-close]="book" cdkFocusInitial>선택</button>
+</mat-dialog-actions>

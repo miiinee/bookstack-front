@@ -28,7 +28,9 @@
 
 .m_book_desc {
     
-    padding: 15px 0;
+    &.onSearching {
+        padding: 15px 0;
+    }
     
     .m_book_img {
         display: flex;

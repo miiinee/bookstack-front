@@ -14,7 +14,7 @@
   </div>
   
   <ng-template #mobile>
-    <div class="m_book_desc">
+    <div class="m_book_desc {{isSearching ? 'onSearching' : ''}}">
       <div class="m_book_img">
         <img mat-card-image src="{{book?.thumbnail}}" alt="book cover">
       </div>

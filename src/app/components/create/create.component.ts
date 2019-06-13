@@ -5,7 +5,7 @@ import { CdkTextareaAutosize } from '@angular/cdk/text-field';
 import { take } from 'rxjs/operators';
 
 import { BookstackService } from '../../services/bookstack.service';
-import { DialogComponent } from '../../shared/components/dialog/dialog.component';
+import { SearchComponent } from '../search/search.component';
 import { Book } from '../../models/book';
 
 @Component({
@@ -36,7 +36,7 @@ export class CreateComponent implements OnInit {
   }
 
   openDialog() {
-    const dialogRef = this.dialog.open(DialogComponent);
+    const dialogRef = this.dialog.open(SearchComponent, {minWidth: '45vw'});
 
     dialogRef.afterClosed().subscribe(book => {
       if (book) {
