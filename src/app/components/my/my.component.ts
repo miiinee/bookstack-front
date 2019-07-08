@@ -12,14 +12,14 @@ import { User } from '../../models/user';
   styleUrls: ['./my.component.scss']
 })
 export class MyComponent implements OnInit {
-  
+
   user: User;
 
   books: Book[];
   innerWidth: number;
 
-  isMine: boolean = true;
-  isMobile: boolean = false;
+  isMine = true;
+  isMobile = false;
 
   constructor(
     private bookstackService: BookstackService,
@@ -31,13 +31,13 @@ export class MyComponent implements OnInit {
     this.getBooks();
     this.getUser();
   }
-  
+
   @HostListener('window:resize', ['$event'])
   onResize(event?: any) {
     this.innerWidth = window.innerWidth;
-    if(this.innerWidth > 735) {
+    if (this.innerWidth > 735) {
       this.isMobile = false;
-    }else{
+    } else {
       this.isMobile = true;
     }
     console.log(this.innerWidth + '//' + this.isMobile);
